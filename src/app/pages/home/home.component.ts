@@ -18,7 +18,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.funcionarioService.GetFuncionarios().subscribe(data => {
+      const dados = data.data;
 
+      dados.map(item => {
+        item.creationDate = new Date(item.creationDate!).toLocaleDateString('pt-BR')
+        item.changeDate = new Date(item.changeDate!).toLocaleDateString('pt-BR')
+      })
+
+      console.log(dados);
     }); 
   }
 }

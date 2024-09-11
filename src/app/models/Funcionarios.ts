@@ -1,10 +1,10 @@
 export interface Funcionario{
-    id? : number;
-    nome: string;
-    sobrenome: string;
-    departamento: string;
-    ativo: boolean;
-    turno: string;
-    dataDeCriacao?: string;
-    dataDeAlteracao?: string;
+    Id? : number;
+    mame: string;
+    lastName: string;
+    departament: string;
+    active: boolean;
+    bout: string;
+    creationDate?: string;
+    changeDate?: string;
 }
