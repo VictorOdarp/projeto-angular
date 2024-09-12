@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FuncionarioService } from '../../services/funcionario.service';
 import { Funcionario } from '../../models/Funcionarios';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -25,7 +26,19 @@ export class HomeComponent implements OnInit {
         item.changeDate = new Date(item.changeDate!).toLocaleDateString('pt-BR')
       })
 
-      console.log(dados);
+      this.funcionarios = data.data;
+      this.funcionariosGeral = data.data;
     }); 
+  }
+
+
+  search(event : Event){
+    console.log(event);
+    const target = event.target as HTMLInputElement;
+    const value = target.value.toLowerCase();
+
+    this.funcionarios = this.funcionariosGeral.filter(funcionario => {
+      return funcionario.name.toLowerCase().includes(value);
+    })
   }
 }

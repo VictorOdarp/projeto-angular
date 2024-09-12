@@ -1,6 +1,6 @@
 export interface Funcionario{
     Id? : number;
-    mame: string;
+    name: string;
     lastName: string;
     departament: string;
     active: boolean;

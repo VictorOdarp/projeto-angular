@@ -20,6 +20,10 @@
     width: 30%;
 }
 
+table{
+    padding: 1% 15%;
+}
+
 .table-imagem-ativo{
     width: 2vh;
 }

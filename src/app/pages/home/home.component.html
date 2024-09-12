@@ -2,7 +2,7 @@
     <button class="botao-cadastro">Cadastrar novo funcionário</button>
     <section class="container-input">
         <label for="">Procurar:</label>
-        <input class="input-buscar" type="text" name="" id="" placeholder="Qual registro está buscando?">
+        <input class="input-buscar" type="text" name="" id="" placeholder="Qual registro está buscando?" (input)="search($event)" >
     </section>
 </section>
 
@@ -17,15 +17,17 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody *ngFor="let funcionario of funcionarios">
         <tr>
             <td>
-                <img class="table-imagem-ativo" src="assets/images/Ativo.png" alt="ativo">
-                <img class="table-imagem-ativo" src="assets/images/Inativo.png" alt="ativo">
+                <img *ngIf="funcionario.active; else inativo" class="table-imagem-ativo" src="assets/images/Ativo.png" alt="ativo">
+                <ng-template #inativo>
+                    <img class="table-imagem-ativo" src="assets/images/Inativo.png" alt="inativo">
+                </ng-template>
             </td>
-            <td>Carlos</td>
-            <td>Eduardo</td>
-            <td>RH</td>
+            <td>{{funcionario.name}}</td>
+            <td>{{funcionario.lastName}}</td>
+            <td>{{funcionario.departament}}</td>
             <td>
                 <button>Editar</button>
                 <button>Detalhes</button>
