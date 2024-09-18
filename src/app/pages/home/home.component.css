@@ -22,8 +22,27 @@
 
 table{
     padding: 1% 15%;
+    text-align: left;
 }
 
 .table-imagem-ativo{
     width: 2vh;
+}
+
+.botao__editar{
+    background-color: red;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.botao__detalhes{
+    border: none;
+    padding: 7px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
 }

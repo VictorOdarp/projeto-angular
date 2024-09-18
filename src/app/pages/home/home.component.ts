@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FuncionarioService } from '../../services/funcionario.service';
 import { Funcionario } from '../../models/Funcionarios';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -30,7 +31,6 @@ export class HomeComponent implements OnInit {
       this.funcionariosGeral = data.data;
     }); 
   }
-
 
   search(event : Event){
     console.log(event);

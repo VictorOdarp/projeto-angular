@@ -1,5 +1,5 @@
 <section class="container-botao">
-    <button class="botao-cadastro">Cadastrar novo funcionário</button>
+    <button [routerLink]="['/cadastro']" routerLinkActive="router-link-active"  class="botao-cadastro">Cadastrar novo funcionário</button>
     <section class="container-input">
         <label for="">Procurar:</label>
         <input class="input-buscar" type="text" name="" id="" placeholder="Qual registro está buscando?" (input)="search($event)" >
@@ -29,11 +29,11 @@
             <td>{{funcionario.lastName}}</td>
             <td>{{funcionario.departament}}</td>
             <td>
-                <button>Editar</button>
-                <button>Detalhes</button>
+                <button class="botao__editar">Editar</button>
+                <button class="botao__detalhes">Detalhes</button>
             </td>
             <td>
-                <button>Excluir</button>
+                <button class="botao__excluir">Excluir</button>
             </td>
         </tr>
     </tbody>
