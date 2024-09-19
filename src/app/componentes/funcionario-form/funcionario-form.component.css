@@ -1,0 +1,25 @@
+section {
+    padding: 5% 30%;
+}
+
+h1{
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+}
+
+.teste{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
