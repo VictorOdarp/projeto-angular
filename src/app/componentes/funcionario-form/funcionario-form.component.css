@@ -17,7 +17,7 @@ div{
     flex-direction: column;
 }
 
-.teste{
+.btn__box{
     display: flex;
     flex-direction: row;
     justify-content: center;
