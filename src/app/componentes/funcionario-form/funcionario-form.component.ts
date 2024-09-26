@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EventEmitter } from '@angular/core';
+import { Funcionario } from '../../models/Funcionarios';
 
 @Component({
   selector: 'app-funcionario-form',
@@ -9,6 +11,8 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
   styleUrl: './funcionario-form.component.css'
 })
 export class FuncionarioFormComponent implements OnInit{
+
+  @Output() OnSubmit = new EventEmitter<Funcionario>();
 
   funcionarioForm!: FormGroup;
 
@@ -31,6 +35,7 @@ export class FuncionarioFormComponent implements OnInit{
 
   submit(){
     console.log(this.funcionarioForm.value);
+    this.OnSubmit.emit(this.funcionarioForm.value);
   }
 
 }
