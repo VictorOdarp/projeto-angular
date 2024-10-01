@@ -12,7 +12,7 @@ import { Funcionario } from '../../models/Funcionarios';
 })
 export class FuncionarioFormComponent implements OnInit{
 
-  @Output() OnSubmit = new EventEmitter<Funcionario>();
+  @Output() onSubmit = new EventEmitter<Funcionario>();
 
   funcionarioForm!: FormGroup;
 
@@ -23,19 +23,19 @@ export class FuncionarioFormComponent implements OnInit{
   ngOnInit(): void {
     this.funcionarioForm = new FormGroup({
       id: new FormControl(0),
-      nome: new FormControl(""),
-      sobrenome: new FormControl(""),
-      departamento: new FormControl(""),
-      turno: new FormControl(""),
-      ativo: new FormControl(true),
-      DataDeCriacao: new FormControl(new Date()),
-      DataDeAlteracao: new FormControl(new Date())
+      name: new FormControl(""),
+      lastName: new FormControl(""),
+      departament: new FormControl(""),
+      bout: new FormControl(""),
+      active: new FormControl(true),
+      creationDate: new FormControl(new Date()),
+      changeDate: new FormControl(new Date())
     });
   }
 
   submit(){
     console.log(this.funcionarioForm.value);
-    this.OnSubmit.emit(this.funcionarioForm.value);
+    this.onSubmit.emit(this.funcionarioForm.value);
   }
 
 }
