@@ -2,11 +2,12 @@ import { Component, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
 import { Funcionario } from '../../models/Funcionarios';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-funcionario-form',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, RouterModule],
   templateUrl: './funcionario-form.component.html',
   styleUrl: './funcionario-form.component.css'
 })

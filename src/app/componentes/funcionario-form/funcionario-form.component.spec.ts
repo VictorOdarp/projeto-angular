@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FuncionarioFormComponent } from './funcionario-form.component';
+import { RouterLink, RouterModule } from '@angular/router';
 
 describe('FuncionarioFormComponent', () => {
   let component: FuncionarioFormComponent;
