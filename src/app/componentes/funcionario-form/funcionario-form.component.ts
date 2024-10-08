@@ -1,5 +1,5 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, Input, input, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
 import { Funcionario } from '../../models/Funcionarios';
 import { RouterModule } from '@angular/router';
@@ -14,6 +14,9 @@ import { RouterModule } from '@angular/router';
 export class FuncionarioFormComponent implements OnInit{
 
   @Output() onSubmit = new EventEmitter<Funcionario>();
+  @Input() btnAcao!: string; 
+  @Input() btnTitulo!: string;
+  @Input() dadosFuncionario: Funcionario | null = null;
 
   funcionarioForm!: FormGroup;
 
@@ -24,10 +27,10 @@ export class FuncionarioFormComponent implements OnInit{
   ngOnInit(): void {
     this.funcionarioForm = new FormGroup({
       id: new FormControl(0),
-      name: new FormControl(""),
-      lastName: new FormControl(""),
-      departament: new FormControl(""),
-      bout: new FormControl(""),
+      name: new FormControl("", [Validators.required]),
+      lastName: new FormControl("", [Validators.required]),
+      departament: new FormControl("", [Validators.required]),
+      bout: new FormControl("", [Validators.required]),
       active: new FormControl(true),
       creationDate: new FormControl(new Date()),
       changeDate: new FormControl(new Date())

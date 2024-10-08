@@ -29,7 +29,7 @@
             <td>{{funcionario.lastName}}</td>
             <td>{{funcionario.departament}}</td>
             <td>
-                <button class="botao__editar">Editar</button>
+                <button class="botao__editar" [routerLink]="['/editar', funcionario.id]" routerLinkActive="router-link-active" >Editar</button>
                 <button class="botao__detalhes">Detalhes</button>
             </td>
             <td>
