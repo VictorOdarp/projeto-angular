@@ -3,11 +3,12 @@ import { FuncionarioFormComponent } from '../../componentes/funcionario-form/fun
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Funcionario } from '../../models/Funcionarios';
 import { FuncionarioService } from '../../services/funcionario.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-editar',
   standalone: true,
-  imports: [FuncionarioFormComponent, RouterLink],
+  imports: [FuncionarioFormComponent, RouterLink, CommonModule],
   templateUrl: './editar.component.html',
   styleUrl: './editar.component.css'
 })
@@ -24,7 +25,6 @@ export class EditarComponent implements OnInit {
 
     this.funcionarioService.GetFuncionario(id).subscribe((data) => {
       this.funcionario = data.data;
-      console.log(data)
     })
   }
 }
