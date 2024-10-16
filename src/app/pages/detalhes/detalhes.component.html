@@ -1,39 +1,51 @@
-<header>
-    <h1>Detalhes Funcionário</h1>
-</header>
+<section>
+    <header>
+        <h1>Detalhes Funcionário</h1>
+    </header>
+    
+    <div class="container__form">
+        <form action="">
+            <div class="input__box">
+                <label for="">Nome</label>
+                <input type="text" placeholder="Nome" disabled>
+            </div>
+            
+            <div class="input__box">
+                <label for="">Sobrenome</label>
+                <input type="text" placeholder="Sobrenome" disabled>
+            </div>
+            
+            <div class="input__box">
+                <label for="">Departamento</label>
+                <input type="text" placeholder="Departamento" disabled>
+            </div>
+            
+            <div class="input__box">
+                <label for="">Turno</label>
+                <input type="text" placeholder="Turno" disabled>
+            </div>
 
-<div class="container__form">
-    <form action="">
-        <div>
-            <label for="">Nome</label>
-            <input type="text" placeholder="Nome" disabled>
-        </div>
-        
-        <div>
-            <label for="">Sobrenome</label>
-            <input type="text" placeholder="Sobrenome" disabled>
-        </div>
-        
-        <div>
-            <label for="">Departamento</label>
-            <input type="text" placeholder="Departamento" disabled>
-        </div>
-        
-        <div>
-            <label for="">Turno</label>
-            <input type="text" placeholder="Turno" disabled>
-        </div>
-        
-        <div>
-            <label for="">DataDeCriação</label>
-            <input type="text" placeholder="DataDeCriação" disabled>
-        </div>
-        
-        <div>
-            <label for="">DataDeAlteração</label>
-            <input type="text" placeholder="DataDeAlteração" disabled>
-        </div>
-    </form>
-</div>
+            <div class="input__box">
+                <label for="">Situação</label>
+                <input type="text" placeholder="Situação" disabled>
+            </div>
+            
+            <div class="input__box">
+                <label for="">Data de Criação</label>
+                <input type="text" placeholder="Data de Criação" disabled>
+            </div>
+            
+            <div class="input__box">
+                <label for="">Data de Alteração</label>
+                <input type="text" placeholder="Data de Alteração" disabled>
+            </div>
+
+            <div class="btn__box">
+                <button>Inativar usuário</button>
+                <button [routerLink]="['/']">Voltar</button>
+            </div>
+        </form>
+    </div>
+</section>
 
 

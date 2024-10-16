@@ -1,4 +1,4 @@
-import { Component, input, OnInit } from '@angular/core';
+import { Component, Input, input, OnInit, Output } from '@angular/core';
 import { FuncionarioService } from '../../services/funcionario.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
@@ -8,11 +8,13 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-detalhes',
   standalone: true,
-  imports: [],
+  imports: [RouterLink, CommonModule],
   templateUrl: './detalhes.component.html',
   styleUrl: './detalhes.component.css'
 })
 export class DetalhesComponent implements OnInit {
+
+  funcionario!: Funcionario;
 
   constructor(private funcionarioService: FuncionarioService, private route: ActivatedRoute, private router: Router){};
 
@@ -20,11 +22,8 @@ export class DetalhesComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get("id"));
 
     this.funcionarioService.GetFuncionario(id).subscribe((data) => {
-    
-    })
+      this.funcionario = data.data;
+    });
     
   }
-
-  
-
 }
