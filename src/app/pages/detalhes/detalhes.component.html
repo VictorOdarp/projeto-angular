@@ -7,37 +7,40 @@
         <form action="">
             <div class="input__box">
                 <label for="">Nome</label>
-                <input type="text" placeholder="Nome" disabled>
+                <input type="text" value="{{funcionario?.name}}" placeholder="Nome" disabled>
             </div>
             
             <div class="input__box">
                 <label for="">Sobrenome</label>
-                <input type="text" placeholder="Sobrenome" disabled>
+                <input type="text" value="{{funcionario?.lastName}}" placeholder="Sobrenome" disabled>
             </div>
             
             <div class="input__box">
                 <label for="">Departamento</label>
-                <input type="text" placeholder="Departamento" disabled>
+                <input type="text" value="{{funcionario?.departament}}" placeholder="Departamento" disabled>
             </div>
             
             <div class="input__box">
                 <label for="">Turno</label>
-                <input type="text" placeholder="Turno" disabled>
+                <input type="text" value="{{funcionario?.bout}}" placeholder="Turno" disabled>
             </div>
 
             <div class="input__box">
                 <label for="">Situação</label>
-                <input type="text" placeholder="Situação" disabled>
+                <input *ngIf="funcionario?.active; else inativo" type="text" value="Ativo" placeholder="Departamento" disabled>
+                <ng-template #inativo>
+                    <input type="text" value="Inativo" disabled>
+                </ng-template>
             </div>
             
             <div class="input__box">
                 <label for="">Data de Criação</label>
-                <input type="text" placeholder="Data de Criação" disabled>
+                <input type="text" value="{{funcionario?.creationDate}}" placeholder="Data de Criação" disabled>
             </div>
             
             <div class="input__box">
                 <label for="">Data de Alteração</label>
-                <input type="text" placeholder="Data de Alteração" disabled>
+                <input type="text" value="{{funcionario?.changeDate}}" placeholder="Data de Alteração" disabled>
             </div>
 
             <div class="btn__box">

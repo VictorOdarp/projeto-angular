@@ -4,17 +4,18 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
 import { Funcionario } from '../../models/Funcionarios';
 import { CommonModule } from '@angular/common';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-detalhes',
   standalone: true,
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, ReactiveFormsModule],
   templateUrl: './detalhes.component.html',
   styleUrl: './detalhes.component.css'
 })
 export class DetalhesComponent implements OnInit {
 
-  funcionario!: Funcionario;
+  funcionario?: Funcionario;
 
   constructor(private funcionarioService: FuncionarioService, private route: ActivatedRoute, private router: Router){};
 
@@ -24,6 +25,5 @@ export class DetalhesComponent implements OnInit {
     this.funcionarioService.GetFuncionario(id).subscribe((data) => {
       this.funcionario = data.data;
     });
-    
   }
 }
