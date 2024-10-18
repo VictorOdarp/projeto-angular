@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
       dados.map(item => {
         item.creationDate = new Date(item.creationDate!).toLocaleDateString('pt-BR')
         item.changeDate = new Date(item.changeDate!).toLocaleDateString('pt-BR')
-      })
+      });
 
       this.funcionarios = data.data;
       this.funcionariosGeral = data.data;
