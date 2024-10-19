@@ -16,21 +16,27 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class DetalhesComponent implements OnInit {
 
   funcionario?: Funcionario;
+  id!:number;
 
   constructor(private funcionarioService: FuncionarioService, private route: ActivatedRoute, private router: Router){};
 
   ngOnInit(): void {
 
-    const id = Number(this.route.snapshot.paramMap.get("id"));
+    this.id = Number(this.route.snapshot.paramMap.get("id"));
 
-    this.funcionarioService.GetFuncionario(id).subscribe(data => {
+    this.funcionarioService.GetFuncionario(this.id).subscribe(data => {
       const dados = data.data;
       this.funcionario = dados;
       
       this.funcionario.creationDate = new Date(this.funcionario.creationDate!).toLocaleDateString('pt-BR')
       this.funcionario.changeDate = new Date(this.funcionario.changeDate!).toLocaleDateString('pt-BR')
     });
+   
+  }
 
-    
+  InativaFuncionario(){
+    this.funcionarioService.InativaFuncionario(this.id).subscribe((data) => {
+      this.router.navigate(["/"]);
+    });
   }
 }
