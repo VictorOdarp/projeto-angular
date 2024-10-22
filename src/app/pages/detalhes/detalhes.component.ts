@@ -36,7 +36,7 @@ export class DetalhesComponent implements OnInit {
 
   InativaFuncionario(){
     this.funcionarioService.InativaFuncionario(this.id).subscribe((data) => {
-      this.router.navigate(["/"]);
+      this.router.navigate([""]);
     });
   }
 }
