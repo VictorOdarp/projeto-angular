@@ -4,7 +4,7 @@
     </header>
     
     <div class="container__form">
-        <form action="">
+        <form>
             <div class="input__box">
                 <label for="">Nome</label>
                 <input type="text" value="{{funcionario?.name}}" placeholder="Nome" disabled>
@@ -27,10 +27,7 @@
 
             <div class="input__box">
                 <label for="">Situação</label>
-                <input *ngIf="funcionario?.active; else inativo" type="text" value="Ativo" placeholder="Departamento" disabled>
-                <ng-template #inativo>
-                    <input type="text" value="Inativo" disabled>
-                </ng-template>
+                <input type="text" [value]="funcionario?.active?  'Ativo' : 'Inativo'" placeholder="Departamento" disabled>
             </div>
             
             <div class="input__box">
