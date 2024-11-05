@@ -34,7 +34,7 @@ export class DetalhesComponent implements OnInit {
 
   InativaFuncionario(){
      this.funcionarioService.InativaFuncionario(this.id).subscribe((data) => {
-      window.location.href = "/";
+      location.assign("/");
     });
   }
   
