@@ -29,8 +29,8 @@
             <td>{{funcionario.lastName}}</td>
             <td>{{funcionario.departament}}</td>
             <td>
-                <button class="botao__editar" [routerLink]="['/editar', funcionario.id]">Editar</button>
-                <button class="botao__detalhes" [routerLink]="['/detalhes', funcionario.id]">Detalhes</button>
+                <button mat-raised-button color="primary" [routerLink]="['/editar', funcionario.id]">Editar</button>
+                <button mat-flat-button color="accent" [routerLink]="['/detalhes', funcionario.id]">Detalhes</button>
             </td>
             <td>
                 <button class="botao__excluir">Excluir</button>

@@ -4,10 +4,13 @@ import { EventEmitter } from '@angular/core';
 import { Funcionario } from '../../models/Funcionarios';
 import { RouterModule } from '@angular/router';
 
+// Angular Material//
+import {MatButtonModule} from '@angular/material/button';
+
 @Component({
   selector: 'app-funcionario-form',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, RouterModule],
+  imports: [FormsModule, ReactiveFormsModule, RouterModule, MatButtonModule],
   templateUrl: './funcionario-form.component.html',
   styleUrl: './funcionario-form.component.css'
 })

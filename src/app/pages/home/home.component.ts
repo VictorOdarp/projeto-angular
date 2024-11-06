@@ -4,10 +4,14 @@ import { Funcionario } from '../../models/Funcionarios';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
+
+// Angular Material//
+import {MatButtonModule} from '@angular/material/button';
+
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, MatButtonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

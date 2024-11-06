@@ -34,7 +34,7 @@
         </div>
 
         <div class="btn__box">
-            <button type="submit" [disabled]="!funcionarioForm.valid">{{btnAcao}}</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!funcionarioForm.valid">{{btnAcao}}</button>
             <button [routerLink]="['/']">Voltar</button>
         </div>
     </form>
