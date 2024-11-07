@@ -6,11 +6,14 @@ import { RouterModule } from '@angular/router';
 
 // Angular Material//
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+
 
 @Component({
   selector: 'app-funcionario-form',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, RouterModule, MatButtonModule],
+  imports: [FormsModule, ReactiveFormsModule, RouterModule, MatButtonModule, MatCardModule,MatInputModule],
   templateUrl: './funcionario-form.component.html',
   styleUrl: './funcionario-form.component.css'
 })

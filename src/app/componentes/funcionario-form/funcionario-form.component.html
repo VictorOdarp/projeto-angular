@@ -1,41 +1,42 @@
-<section>
-    <h1>{{btnTitulo}}</h1>
+<mat-card>
     
     <form [formGroup]="funcionarioForm" (ngSubmit)="submit()" #formDit="ngForm">
 
-        <div>
-            <label for="">Nome:</label>
-            <input type="text" formControlName="name" placeholder="Insira o nome!" required>
-        </div>
+        <h1>{{btnTitulo}}</h1>
 
-        <div>
-            <label for="">Sobrenome:</label>
-            <input type="text" formControlName="lastName" placeholder="Insira o Sobrenome!" required>
-        </div>
+        <mat-form-field>
+            <mat-label>Nome</mat-label>
+            <input matInput type="text" formControlName="name" placeholder="Insira o nome!" required>
+        </mat-form-field>
 
-        <div>
-            <label for="">Departamento:</label>
-            <select id="departamento" formControlName="departament" required>
+        <mat-form-field>
+            <mat-label >Sobrenome</mat-label>
+            <input matInput type="text" formControlName="lastName" placeholder="Insira o Sobrenome!" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Departamento</mat-label>
+            <select matNativeControl required formControlName="departament">
                 <option value="RH">RH</option>
                 <option value="Financeiro">Financeiro</option>
                 <option value="Compras">Compras</option>
                 <option value="Atendimento">Atendimento</option>
                 <option value="Zeladoria">Zeladoria</option>
             </select>
-        </div>
+        </mat-form-field>
 
-        <div>
-            <label for="">Turno:</label>
-            <select id="bout" formControlName="bout" required>
+        <mat-form-field>
+            <mat-label>Turno</mat-label>
+            <select matNativeControl required formControlName="bout">
                 <option value="Manhã">Manhã</option>
                 <option value="Tarde">Tarde</option>
                 <option value="Noite">Noite</option>
             </select>
-        </div>
+        </mat-form-field>
 
         <div class="btn__box">
             <button mat-raised-button color="primary" type="submit" [disabled]="!funcionarioForm.valid">{{btnAcao}}</button>
-            <button [routerLink]="['/']">Voltar</button>
+            <button mat-raised-button [routerLink]="['/']">Voltar</button>
         </div>
     </form>
-</section>
+</mat-card>
