@@ -4,10 +4,15 @@ import { ActivatedRoute, RouterLink, RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { Funcionario } from '../../models/Funcionarios';
 
+// Angular Material //
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+
 @Component({
   selector: 'app-detalhes',
   standalone: true,
-  imports: [RouterLink, RouterModule],
+  imports: [RouterLink, RouterModule, MatButtonModule,MatCardModule,MatInputModule],
   templateUrl: './detalhes.component.html',
   styleUrl: './detalhes.component.css'
 })
