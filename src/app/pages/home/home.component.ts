@@ -7,11 +7,12 @@ import { RouterLink } from '@angular/router';
 
 // Angular Material//
 import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, MatButtonModule],
+  imports: [CommonModule, RouterLink, MatButtonModule, MatTableModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -19,8 +20,10 @@ export class HomeComponent implements OnInit {
   
   funcionarios: Funcionario[] = [];
   funcionariosGeral: Funcionario[] = [];
+  colunas = ["Situacao", "Nome", "Sobrenome", "Departamento", "Editar", "Detalhes", "Excluir"];
 
   constructor(private funcionarioService: FuncionarioService) {}
+  
 
   ngOnInit(): void {
 

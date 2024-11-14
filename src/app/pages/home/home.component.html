@@ -6,7 +6,61 @@
     </section>
 </section>
 
-<table class="table">
+<table mat-table [dataSource]="funcionarios" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="Situacao">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let funcionario">
+        <img *ngIf="funcionario.active; else inativo" class="table-imagem-ativo" src="assets/images/Ativo.png" alt="ativo">
+                <ng-template #inativo>
+                    <img class="table-imagem-ativo" src="assets/images/Inativo.png" alt="inativo">
+                </ng-template>
+      </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Nome">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let funcionario"> {{funcionario.name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Sobrenome">
+      <th mat-header-cell *matHeaderCellDef> Sobrenome</th>
+      <td mat-cell *matCellDef="let funcionario"> {{funcionario.lastName}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Departamento">
+      <th mat-header-cell *matHeaderCellDef> Departamento </th>
+      <td mat-cell *matCellDef="let funcionario"> {{funcionario.departament}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Editar">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let funcionario"> <button mat-raised-button color="primary" [routerLink]="['/editar', funcionario.id]">Editar</button></td>
+    </ng-container>
+
+    <ng-container matColumnDef="Detalhes">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let funcionario"> <button mat-flat-button color="accent" [routerLink]="['/detalhes', funcionario.id]">Detalhes</button>
+    </ng-container>
+
+    <ng-container matColumnDef="Excluir">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let funcionario"> <button class="botao__excluir">Excluir</button> </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunas"></tr>
+  </table>
+  
+
+<!-- <table class="table">
     <thead>
         <tr>
             <th></th>
@@ -37,4 +91,4 @@
             </td>
         </tr>
     </tbody>
-</table>
+</table> -->
