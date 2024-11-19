@@ -8,11 +8,12 @@ import { RouterLink } from '@angular/router';
 // Angular Material//
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, MatButtonModule, MatTableModule],
+  imports: [CommonModule, RouterLink, MatButtonModule, MatTableModule, MatInputModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

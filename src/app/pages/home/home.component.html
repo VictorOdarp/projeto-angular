@@ -1,8 +1,10 @@
 <section class="container-botao">
-    <button [routerLink]="['/cadastro']" routerLinkActive="router-link-active"  class="botao-cadastro">Cadastrar novo funcionário</button>
+    <button mat-raised-button color="primary" [routerLink]="['/cadastro']" routerLinkActive="router-link-active"  class="botao-cadastro">Cadastrar novo funcionário</button>
     <section class="container-input">
-        <label for="">Procurar:</label>
-        <input class="input-buscar" type="text" name="" id="" placeholder="Qual registro está buscando?" (input)="search($event)" >
+        <mat-form-field>
+            <mat-label for="">Procurar:</mat-label>
+            <input matInput class="input-buscar" type="text" name="" id="" placeholder="Qual registro está buscando?" (input)="search($event)" >
+        </mat-form-field>
     </section>
 </section>
 
