@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { FuncionarioService } from '../../services/funcionario.service';
 import { Funcionario } from '../../models/Funcionarios';
 import { CommonModule } from '@angular/common';
@@ -9,19 +9,24 @@ import { RouterLink } from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
+import { MatDialog } from '@angular/material/dialog';
+import { ExcluirComponent } from '../excluir/excluir.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, RouterLink, MatButtonModule, MatTableModule, MatInputModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
   
   funcionarios: Funcionario[] = [];
   funcionariosGeral: Funcionario[] = [];
   colunas = ["Situacao", "Nome", "Sobrenome", "Departamento", "Editar", "Detalhes", "Excluir"];
+
+  readonly dialog = inject(MatDialog);
+  id!:number;
 
   constructor(private funcionarioService: FuncionarioService) {}
   
@@ -50,5 +55,12 @@ export class HomeComponent implements OnInit {
       return funcionario.name.toLowerCase().includes(value);
     });
   };
+
+  openDialog(funcionario: Funcionario) {
+    this.dialog.open(ExcluirComponent, {
+      width: '350px',
+      height: '350px',
+    });
+  }
   
 }

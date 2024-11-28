@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DialogExcluirComponent } from './dialog-excluir.component';
+import { ExcluirComponent } from './excluir.component';
 
-describe('DialogExcluirComponent', () => {
-  let component: DialogExcluirComponent;
-  let fixture: ComponentFixture<DialogExcluirComponent>;
+describe('ExcluirComponent', () => {
+  let component: ExcluirComponent;
+  let fixture: ComponentFixture<ExcluirComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DialogExcluirComponent]
+      imports: [ExcluirComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DialogExcluirComponent);
+    fixture = TestBed.createComponent(ExcluirComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
