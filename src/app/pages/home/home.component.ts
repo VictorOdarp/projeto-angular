@@ -25,10 +25,7 @@ export class HomeComponent implements OnInit {
   funcionariosGeral: Funcionario[] = [];
   colunas = ["Situacao", "Nome", "Sobrenome", "Departamento", "Editar", "Detalhes", "Excluir"];
 
-  readonly dialog = inject(MatDialog);
-  id!:number;
-
-  constructor(private funcionarioService: FuncionarioService) {}
+  constructor(private funcionarioService: FuncionarioService, public dialog: MatDialog) {}
   
 
   ngOnInit(): void {
@@ -56,10 +53,13 @@ export class HomeComponent implements OnInit {
     });
   };
 
-  openDialog(funcionario: Funcionario) {
+  openDialog(id : Number) {
     this.dialog.open(ExcluirComponent, {
       width: '350px',
       height: '350px',
+      data: {
+        id : id
+      }
     });
   }
   
