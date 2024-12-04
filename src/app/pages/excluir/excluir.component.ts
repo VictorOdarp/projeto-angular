@@ -1,11 +1,12 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, Inject, OnInit} from '@angular/core';
 import { FuncionarioService } from '../../services/funcionario.service';
 import { Router} from '@angular/router';
 
 // Angular Material //
 import {MatButtonModule} from '@angular/material/button';
-import {MatDialogModule } from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
+import { Funcionario } from '../../models/Funcionarios';
 
 @Component({
   selector: 'app-excluir',
@@ -16,9 +17,17 @@ import { MatInputModule } from '@angular/material/input';
 })
 export class ExcluirComponent implements OnInit{
 
-  constructor(private funcionarioService: FuncionarioService, private router: Router){}
+  inputdata: any;
+  funcionario!: Funcionario;
+
+  constructor(private funcionarioService: FuncionarioService, private router: Router, @Inject(MAT_DIALOG_DATA) public data: any){}
 
   ngOnInit(): void {
-    console.log("teste");
+    this.inputdata = this.data;
+    this.funcionarioService.GetFuncionario(this.inputdata.id).subscribe(data => {
+      const dados = data.data;
+
+      this.funcionario = dados;
+    })
   }
 }
