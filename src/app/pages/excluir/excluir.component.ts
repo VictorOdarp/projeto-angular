@@ -30,4 +30,10 @@ export class ExcluirComponent implements OnInit{
       this.funcionario = dados;
     })
   }
+  
+  ExcluirFuncionario(){
+    this.funcionarioService.ExcluirFuncionario(this.inputdata.id).subscribe((data)=>{
+      location.assign("/");
+    });
+  }
 }
